@@ -18,6 +18,7 @@ public class Student {
         scanner = new Scanner(System.in);
     }
 
+
     /*
      * Gets the student's choice and runs it until the student exits
      */
