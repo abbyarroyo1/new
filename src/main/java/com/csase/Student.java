@@ -19,8 +19,6 @@ public class Student {
     }
 
 
-
-
     /*
      * Gets the student's choice and runs it until the student exits
      */
