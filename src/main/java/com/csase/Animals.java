@@ -10,7 +10,6 @@ public class Animals {
     Integer age;
     Integer number; // Number the animal with the characteristics in the Humane Society
 
-
     // class constructor with data
     public Animals(String type, String gender, String color, Integer age, Integer number) {
         this.type = type;

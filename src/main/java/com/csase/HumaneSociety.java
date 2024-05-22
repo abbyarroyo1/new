@@ -13,7 +13,6 @@ public class HumaneSociety {
                * checks if the desired type of cat is at the Humane Society. If so, it returns the
                  number available
      */
-
     private List<Cats> catList;
 
     public HumaneSociety(List<Cats> catList) { this.catList = catList;}
