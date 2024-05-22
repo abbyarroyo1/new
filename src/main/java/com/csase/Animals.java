@@ -1,3 +1,5 @@
+package com.csase;
+
 public class Animals {
     // This is the class for animals.
     // There is a subclass for cats and dogs. Dogs have an additional instance variable size.

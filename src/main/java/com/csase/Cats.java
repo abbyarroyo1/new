@@ -1,3 +1,5 @@
+package com.csase;
+
 public class Cats extends Animals {
     // This is the class for cats. It doesn't have any new instance variables like dogs, which have the
     //     additional instance variable of size

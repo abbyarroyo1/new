@@ -1,5 +1,8 @@
+package com.csase;
+
 import java.util.ArrayList;
 import java.util.List;
+
 
 // HumaneSocietyClient class
 public class HumaneSocietyClient {
