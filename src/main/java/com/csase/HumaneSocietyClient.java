@@ -16,7 +16,10 @@ public class HumaneSocietyClient {
         List<Cats> catList = new ArrayList<>();
         // TODO for dogs
 
-        //TODO Read data from Excel into the ArrayLists
+        //Read data from Excel into the ArrayLists
+        ReadExcelData.readDataForArrayLists(catList);
+
+        /* // Below is the original code to create a cat instance before reading in Excel.
         // Create some cat instances
         String type = "CAT";
         String gender = "F";
@@ -25,15 +28,17 @@ public class HumaneSocietyClient {
         Integer number = 5;
 
         Cats newCatItem = new Cats(type, gender, color, age, number);
-        catList.add(newCatItem);
-
-        System.out.println(catList.get(0).getType());
+        catList.add(newCatItem); */
 
         // Create the HumaneSociety and add the cats
         HumaneSociety HumaneSocietyInstance = new HumaneSociety(catList);
 
         // Check if a cat type exists
-        // Start with the same cat that we just entered
+        String type = "CAT";
+        String gender = "F";
+        String color = "BLACK";
+        Integer age = 1;
+
         Cats searchCat = new Cats(type, gender, color, age, 0); // Number is not relevant for search
         Integer availableCats = HumaneSocietyInstance.checkForCats(searchCat);
         System.out.println("Number of available cats: " + availableCats);

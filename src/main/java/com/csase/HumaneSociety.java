@@ -13,8 +13,10 @@ public class HumaneSociety {
                * checks if the desired type of cat is at the Humane Society. If so, it returns the
                  number available
      */
+    // Instance variables
     private List<Cats> catList;
 
+    // Instantiate the instance variables
     public HumaneSociety(List<Cats> catList) { this.catList = catList;}
 
     public Integer checkForCats(Cats catItem){
