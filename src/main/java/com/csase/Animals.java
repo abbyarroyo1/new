@@ -21,9 +21,9 @@ public class Animals {
 
     // class constructor with no data
     public Animals() {
-        this.type = "null";
-        this.gender = "null";
-        this.color = "null";
+        this.type = "";
+        this.gender = "";
+        this.color = "";
         this.age = 0;
         this.number = 0;
     }

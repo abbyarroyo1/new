@@ -11,7 +11,7 @@ public class ReadExcelData {
 
     private static String fileName = "src/main/java/com/csase/HumaneSociety_data.xlsx";
 
-    public static void readDataForArrayLists(List<Cats> catList) {
+    public static void readDataForArrayLists(List<Cats> catList, List<Dogs> dogList) {
         // TODO DOG UPDATE START   public static void readDataForArrayLists(List<Cats> catList, List<Dogs> dogList) {
 
         try (FileInputStream fileInputStream = new FileInputStream(new File(fileName))) {
@@ -19,7 +19,7 @@ public class ReadExcelData {
             Workbook workbook = new XSSFWorkbook(fileInputStream);
 
             // Get the sheet
-            int sheetNumber = 0; // The first sheet has the data
+            int sheetNumber = 0;
             Sheet sheet = workbook.getSheetAt(sheetNumber);
 
             // Iterate over rows and cells
@@ -33,6 +33,7 @@ public class ReadExcelData {
                 String color = "";
                 int age = -1;
                 int number = -1;
+                String build = "";
 
                 for (Cell cell : row) {
                     // Check the cell type set the variables
@@ -43,6 +44,8 @@ public class ReadExcelData {
                             gender = cell.getStringCellValue();
                         } else if (color.isEmpty()) {
                             color = cell.getStringCellValue();
+                        } else if (build.isEmpty()){
+                            build = cell.getStringCellValue();
                         }
                     } else if (cell.getCellType() == CellType.NUMERIC) {
                         if (age == -1) {
@@ -53,26 +56,30 @@ public class ReadExcelData {
                     }
                 }
 
-                // Check if the data are there and create the object
-                if (!type.isEmpty() && !gender.isEmpty() && !color.isEmpty()) {
-                    if (age >= 0 && number >= 0 ) {
-                        if (type.equals("CAT")) {
-                            Cats catItem = new Cats(type, gender, color, age, number);
-                            catList.add(catItem);
+                    // Check if the data are there and create the object
+                    if (!type.isEmpty() && !gender.isEmpty() && !color.isEmpty() && !build.isEmpty()) {
+                        if (age >= 0 && number >= 0) {
+                            if (type.equals("CAT")) {
+                                Cats catItem = new Cats(type, gender, color, age, number);
+                                catList.add(catItem);
+                            } else if (type.equals("DOG")) {
+                                Dogs dogItem = new Dogs(type, gender, color, age, number, build);
+                                dogList.add(dogItem);
+                            }
                         }
-                        // TODO DOG UPDATE START
-                        //else if (type.equals("DOG")){
-                        //
-                        //}
                     }
                 }
-            }
 
-            // Close the workbook
-            workbook.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+                // Close the workbook
+                workbook.close();
+            } catch(IOException e){
+                e.printStackTrace();
+            }
         }
+
     }
 
-}
+
+
+
+
